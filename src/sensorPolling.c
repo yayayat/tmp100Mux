@@ -1,10 +1,10 @@
-#define SENSORPOLLING_C
 #include "sensorPolling.h"
 
 #include "eventLogging.h"
 #include "stm32f0xx.h"
 #include "sysControl.h"
 
+static swI2C_t i2cInstances[NUM_OF_SENSORS] = {SENSORS_PINS};
 tempSensor_t tempSensors[NUM_OF_SENSORS];  //Массив подключенных датчиков
 
 void sensorPolling_init() {
