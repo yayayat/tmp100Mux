@@ -6,7 +6,7 @@
 
 [Reference Manual](https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4x6x8xc-and-stm32f070x6xb-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
 
-#### Датчик температуры: TexasInstruments TMP100
+#### Датчик температуры: Texas Instruments TMP100
 
 [Datasheet](https://www.ti.com/lit/ds/symlink/tmp100.pdf?ts=1665523508446&ref_url=https%253A%252F%252Fwww.google.com%252F)
 
@@ -39,7 +39,9 @@
 ```
 ### Распиновка I²C
 
-Задается многострочным макросом
+Задается многострочным макросом в формате {<пин SDA>, <пин SCL>},\
+
+Количество строк должно совпадать с числом указанных датчиков
 ```
 #define SENSORS_PINS \
     {PA0, PA1},      \
