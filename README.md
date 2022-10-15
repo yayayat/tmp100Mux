@@ -6,14 +6,15 @@
 
 [Reference Manual](https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4x6x8xc-and-stm32f070x6xb-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
 
-#### Датчик температуры: Texas Instruments TMP100
+UART сконфигурирован на пины ``` PA9 TX``` и ```PA10 RX```
+#### Датчик температуры Texas Instruments TMP100
 
 [Datasheet](https://www.ti.com/lit/ds/symlink/tmp100.pdf?ts=1665523508446&ref_url=https%253A%252F%252Fwww.google.com%252F)
 
 #### Другие датчики
 При необходимости, можно использовать другой аналогичный датчик. 
 
-Для нового датчика нужно определить свои функции ```tempSensor_init```, ```tempSensor_setRes``` и ```tempSensor_readTemp``` и включить их в файл ```sensorPolling.h```. За основу можно взять файлы ```TMP100.h``` и ```TMP100.c```
+Для нового датчика нужно определить свои функции ```tempSensor_init```, ```tempSensor_setRes``` и ```tempSensor_readTemp``` и включить их в файл ```include/sensorPolling.h```. За основу можно взять файлы ```include/TMP100.h``` и ```include/TMP100.c```
 
 ## Сборка
 ### [Platformio](https://platformio.org)
@@ -31,7 +32,7 @@
 
 
 ## Настройка
-Вся настройка осуществляется в файле ```config.h```
+Вся настройка осуществляется в файле ```include/config.h```
 ### Количество датчиков
 Задается макросом
 ```
@@ -39,7 +40,7 @@
 ```
 ### Распиновка I²C
 
-Задается многострочным макросом в формате {<пин SDA>, <пин SCL>},\
+Задается многострочным макросом в формате ```{<пин SDA>, <пин SCL>},\```
 
 Количество строк должно совпадать с числом указанных датчиков
 ```
